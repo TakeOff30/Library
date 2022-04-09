@@ -10,24 +10,27 @@
 <body>
     <header>
         <h1>Library</h1>
+        <button class="add showF">Add book &plus;</button>
     </header>
     <main>
+        <div class="userInp">
+            <button class="close-button">&times;</button>
+            <span>
+                <label for="book">Book:</label>
+                <input type="text" id="book">
+            </span>
+            <span>
+                <label for="author">Author:</label>
+                <input type="text" id="author">
+            </span>
+            <span>
+                <label for="pages">Number of pages:</label>
+                <input type="number" min="0" id="pages">
+            </span>
+            <button class="add toLib">Done</button>
+        </div>
         <div class="library">
-            <div class="userInp">
-                <span>
-                    <label for="book">Book:</label>
-                    <input type="text" id="book">
-                </span>
-                <span>
-                    <label for="author">Author:</label>
-                    <input type="text"  id="author">
-                </span>
-                <span>
-                    <label for="pages">Number of pages:</label>
-                    <input type="number" min="0">
-                </span>
-            </div>
-
+            
         </div>
         <div class="sideNav">
             <label for="srcInp">Search for a book</label>
@@ -37,6 +40,7 @@
     <footer>
         <p>Made by Oliver - The Odin Project</p>
     </footer>
+    <div id="overlay"></div>
 </body>
 <script src="script.js"></script>
 </html>

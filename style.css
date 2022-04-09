@@ -15,6 +15,7 @@
     box-sizing: border-box;
     color: whitesmoke;
     transition: all 200ms ease-in;
+    font-family: 'Raleway';
 }
 
 body{
@@ -38,16 +39,40 @@ main{
 }
 
 .userInp{
-    visibility: hidden;
     padding: 1rem;
     background-color: var(--third);
-    position: absolute;
-    left: 40%;
-    bottom: 40%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     
+}
+
+.userInp.active{
+    
+    transform: translate(-50%,-50%) scale(1);
+    
+}
+
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+#overlay.active{
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: all;
 }
 
 .library{
@@ -55,6 +80,16 @@ main{
     grid-column: 1;
     display: grid;
     grid-template-columns: repeat(autofit, minmax(200px, 1fr));
+}
+
+.card{
+    
+    padding: 1rem;
+    background-color: var(--third);
+    border-left: solid var(--first) 3px;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: transform 200ms ease-in;
 }
 
 .sideNav{
@@ -83,4 +118,60 @@ h2{
 
 p{
     font-size: var(--normal);
+}
+
+button{
+    background-color: var(--third);
+    border-style: solid;
+    border-color: var(--first);
+    border-radius: 10px;
+    color: var(--black);
+    padding: 0.7rem;
+    margin: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    bottom: 0;
+}
+button:hover{
+    background-color: var(--first);
+    border-color: white;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+
+button.close-button{
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+button.close-button:hover{
+    color: red;
+}
+
+button.add{
+    background-color: green;
+}
+button.add:hover{
+    background-color: rgb(30, 94, 30);
+}
+
+input{
+    padding: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: transparent;
+    color: var(--first);
+}
+input:focus{
+    outline: none;
+    
 }

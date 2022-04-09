@@ -127,3 +127,7 @@ function removeBook(bookIndex){
     
     
 }
+
+overlay.addEventListener('click', () => {
+    removeForm();
+});
